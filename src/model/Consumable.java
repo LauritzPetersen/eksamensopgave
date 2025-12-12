@@ -12,6 +12,12 @@ public class Consumable extends Item {
         this.quantity = quantity;
     }
 
+    public Consumable(ConsumableType consumableType, String name, int quantity, ItemRarity itemRarity) {
+        super(name, DEFAULT_WEIGHT, itemRarity);
+        this.consumableType = consumableType;
+        this.quantity = quantity;
+    }
+
     public ConsumableType getConsumableType() { return consumableType; }
     public int getQuantity() { return quantity; }
     public void addQuantity(int amount) { quantity += amount; }
@@ -22,6 +28,6 @@ public class Consumable extends Item {
 
     @Override
     public String toString() {
-        return "CONSUMABLE, " + name + ", " + weight + " kg, x" + quantity;
+        return "CONSUMABLE, " + itemRarity + ", " + name + ", " + weight + " kg, x" + quantity;
     }
 }

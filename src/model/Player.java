@@ -22,10 +22,6 @@ public class Player implements Serializable{
         return maxInventorySlots;
     }
 
-    public boolean canLevelUp() {
-        return level < MAX_LEVEL;
-    }
-
     public void levelUp() {
         if (level < MAX_LEVEL) {
             level++;

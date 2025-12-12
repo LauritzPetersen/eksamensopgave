@@ -9,6 +9,11 @@ public class Armor extends Item {
         this.armorType = armorType;
     }
 
+    public Armor(ArmorType armorType, ItemRarity itemRarity) {
+        super(armorType.toString(), armorType.getWeight(), itemRarity);
+        this.armorType = armorType;
+    }
+
     public ArmorType getArmorType() { return armorType; }
 
     @Override
@@ -16,6 +21,6 @@ public class Armor extends Item {
 
     @Override
     public String toString() {
-        return "ARMOR, " + name + ", " + weight + " kg";
+        return "ARMOR, " + itemRarity + ", " + name + ", " + weight + " kg";
     }
 }

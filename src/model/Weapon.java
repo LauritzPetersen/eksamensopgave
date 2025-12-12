@@ -9,6 +9,11 @@ public class Weapon extends Item {
         this.weaponType = weaponType;
     }
 
+    public Weapon(WeaponType weaponType, ItemRarity itemRarity) {
+        super(weaponType.toString(), weaponType.getWeight(), itemRarity);
+        this.weaponType = weaponType;
+    }
+
     public WeaponType getWeaponType() { return weaponType; }
 
     @Override
@@ -16,6 +21,6 @@ public class Weapon extends Item {
 
     @Override
     public String toString() {
-        return "WEAPON, " + name + ", " + weight + " kg";
+        return "WEAPON, " + itemRarity + ", " + name + ", " + weight + " kg";
     }
 }

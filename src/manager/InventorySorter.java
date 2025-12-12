@@ -5,6 +5,7 @@ import model.Item;
 
 public class InventorySorter {
 
+    // bubble-sort where it sorts items by name
     public static void sortByName(List<Item> items) {
         for(int i = 0; i < items.size()- 1; i++) {
             for( int j = 0; j < items.size() - i - 1; j++) {
@@ -17,6 +18,7 @@ public class InventorySorter {
         }
     }
 
+    // bubble-sort where it sorts items by weight
     public static void sortByWeight(List<Item> items) {
         for (int i = 0; i < items.size() - 1; i++) {
             for (int j = 0; j < items.size() - i - 1; j++) {
@@ -29,6 +31,7 @@ public class InventorySorter {
         }
     }
 
+    // bubble-sort where it sorts items by type
     public static void sortByType(List<Item> items) {
         for (int i = 0; i < items.size() - 1; i++) {
             for (int j = 0; j < items.size() - i - 1; j++) {
