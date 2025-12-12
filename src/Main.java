@@ -16,7 +16,6 @@ public class Main {
 
         Armor armor = new Armor(ArmorType.BELT);
         System.out.println(armor);
-
     }
 }
 
