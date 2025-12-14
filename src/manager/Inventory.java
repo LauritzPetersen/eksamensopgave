@@ -16,19 +16,40 @@ public class Inventory {
         this.player = player;
     }
 
+    // method where the default rarity is set to COMMON
     public void addWeapon(WeaponType type) throws InventoryFullException, WeightLimitException {
         Weapon weapon = new Weapon(type);
         addItem(weapon);
     }
+    // overloaded version where rarity is chosen
+    public void addWeapon(WeaponType type, ItemRarity rarity) throws InventoryFullException, WeightLimitException {
+        Weapon weapon = new Weapon(type, rarity);
+        addItem(weapon);
+    }
 
+    // method where the default rarity is set to COMMON
     public void addArmor(ArmorType type) throws InventoryFullException, WeightLimitException {
         Armor armor = new Armor(type);
         addItem(armor);
     }
 
+    // overloaded version where rarity is chosen
+    public void addArmor(ArmorType type, ItemRarity rarity) throws InventoryFullException, WeightLimitException {
+        Armor armor = new Armor(type, rarity);
+        addItem(armor);
+    }
+
+    // method where the default rarity is set to COMMON
     public void addConsumable(ConsumableType type, String name, int quantity)
             throws InventoryFullException, WeightLimitException {
         Consumable consumable = new Consumable(type, name, quantity);
+        addItem(consumable);
+    }
+
+    // overloaded version where rarity is chosen
+    public void addConsumable(ConsumableType type, String name, int quantity, ItemRarity rarity)
+            throws InventoryFullException, WeightLimitException {
+        Consumable consumable = new Consumable(type, name, quantity, rarity);
         addItem(consumable);
     }
 
