@@ -1,4 +1,4 @@
-package manager;
+package logik;
 
 import java.util.List;
 import model.Item;

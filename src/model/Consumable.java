@@ -4,16 +4,16 @@ public class Consumable extends Item {
     private static final long serialVersionUID = 1L;
     private ConsumableType consumableType;
     private int quantity;
-    private static final double DEFAULT_WEIGHT = 0.2;
+    private static final double DEFAULT_WEIGHT_PER_UNIT = 0.2;
 
     public Consumable(ConsumableType consumableType, String name, int quantity) {
-        super(name, DEFAULT_WEIGHT);
+        super(name, DEFAULT_WEIGHT_PER_UNIT);
         this.consumableType = consumableType;
         this.quantity = quantity;
     }
 
     public Consumable(ConsumableType consumableType, String name, int quantity, ItemRarity itemRarity) {
-        super(name, DEFAULT_WEIGHT, itemRarity);
+        super(name, DEFAULT_WEIGHT_PER_UNIT, itemRarity);
         this.consumableType = consumableType;
         this.quantity = quantity;
     }
@@ -24,10 +24,16 @@ public class Consumable extends Item {
     public void removeQuantity(int amount) { quantity -= amount; }
 
     @Override
+    public double getWeight() { return DEFAULT_WEIGHT_PER_UNIT * quantity; }
+
+    @Override
+    public double getDefaultWeightPerUnit() { return DEFAULT_WEIGHT_PER_UNIT; }
+
+    @Override
     public String getType() { return "CONSUMABLE"; }
 
     @Override
     public String toString() {
-        return "CONSUMABLE, " + itemRarity + ", " + name + ", " + weight + " kg, x" + quantity;
+        return "CONSUMABLE, " + itemRarity + ", " + name + ", " + getWeight() + " kg, x" + quantity;
     }
 }

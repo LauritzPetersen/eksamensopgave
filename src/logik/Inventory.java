@@ -1,4 +1,4 @@
-package manager;
+package logik;
 
 import model.*;
 import exception.*;
@@ -10,6 +10,7 @@ public class Inventory {
     private List<Item> items;
     private Player player;
     private static final double MAX_WEIGHT = 50.0;
+
 
     public Inventory(Player player) {
         this.items = new ArrayList<>();
@@ -89,6 +90,14 @@ public class Inventory {
     public void removeItem(int index) throws InvalidItemException {
         if (index < 0 || index >= items.size()) {
             throw new InvalidItemException("Invalid item index: " + index);
+        }
+        Item item = items.get(index);
+        if (item instanceof Consumable) {
+            Consumable cons = (Consumable) item;
+            if (cons.getQuantity() > 1) {
+                cons.removeQuantity(1);
+                return;
+            }
         }
         items.remove(index);
     }

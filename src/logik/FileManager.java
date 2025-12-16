@@ -1,4 +1,4 @@
-package manager;
+package logik;
 
 import model.*;
 import data.*;
