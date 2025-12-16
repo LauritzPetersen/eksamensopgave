@@ -41,16 +41,16 @@ public class Inventory {
     }
 
     // method where the default rarity is set to COMMON
-    public void addConsumable(ConsumableType type, String name, int quantity)
+    public void addConsumable(ConsumableType type, int quantity)
             throws InventoryFullException, WeightLimitException {
-        Consumable consumable = new Consumable(type, name, quantity);
+        Consumable consumable = new Consumable(type, quantity);
         addItem(consumable);
     }
 
     // overloaded version where rarity is chosen
     public void addConsumable(ConsumableType type, String name, int quantity, ItemRarity rarity)
             throws InventoryFullException, WeightLimitException {
-        Consumable consumable = new Consumable(type, name, quantity, rarity);
+        Consumable consumable = new Consumable(type, quantity, rarity);
         addItem(consumable);
     }
 
